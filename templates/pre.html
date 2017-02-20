@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>历史文章</h2>
+  <br>
+  <hr>
+  <br><br>
+  <div class="list-group">
+    {% for article in articles %}
+      <a href="{% url 'detail' article_id=article.id %}" class="list-group-item">
+        <h4 class="list-group-item-heading"><strong>{{ article.title }}</strong></h4>
+        <span class="badge">{{ article.category }}</span>
+        <p class="list-group-item-text">{{ article.date_time|date:'Y年m月d日' }}</p>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

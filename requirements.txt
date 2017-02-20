@@ -1,0 +1,8 @@
+appdirs==1.4.0
+codegen==1.0
+Django==1.10.5
+markdown2==2.3.3
+packaging==16.8
+patterns==0.3
+pyparsing==2.1.10
+six==1.10.0

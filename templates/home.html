@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{#  给导航栏添加点击效果#}
+  <script>
+      $("#home").addClass("active");
+  </script>
+  <!--页面正文-->
+  <!--文章的条目-->
+    <div>
+      {% for article in articles %}
+        <!--显示文章-->
+        <br>
+        <div>
+          <!--文章的标题和信息-->
+          <div class="post-header">
+            <h1 class="article-title">
+              <strong><a href="{% url 'detail' article_id=article.id %}" rel="bookmark"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;{{ article.title }}</a></strong>
+            </h1>
+            <br>
+            <div class="article-meta">
+              <ul class="breadcrumb">
+                <li>日期：<a href="javascript:void(0)">{{ article.date_time| date:'Y.m.d' }}</a></li>
+                <li>分类：<a href="javascript:void(0)">{{ article.category }}</a></li>
+              </ul>
+            </div>
+
+          </div>
+          <!--文章的内容-->
+          <div>
+            {% load djangomarkdown %}
+            <small>{{ article|django_markdown}}</small>
+            <span><a href="{% url 'detail' article_id=article.id %}">...read more...</a></span>
+          </div>
+          <br><br>
+          <hr>
+        </div>
+      {% endfor %}
+    </div>
+    <!--内容底部的浏览以前的文章-->
+  {% if article_num > 4 %}
+    <ul class="pager">
+      <li class="previous"><a href="{% url 'pre' %}">&lt;&lt;以前的文章</a></li>
+    </ul>
+  {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>李健胜的个人博客</title>
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/selfmade/base.css">
+  <script src="/static/bootstrap/js/jquery-3.1.1.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<div id='head-content' class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" ><br><div id="mypanel">
+      <h1><a href="javascript:void(0)"></a>Jeson</h1>
+      <hr>
+      <br>
+      <h4>Java程序员，Python爱好者</h4>
+    </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
+<!--导航条-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">回到顶部</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="home"><a href="{% url 'home' %}">主页</a></li>
+        <li id="aboutMe"><a href="{% url 'about_me' %}">关于我</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'contact' %}"><span class="glyphicon glyphicon-envelope"></span>&nbsp;联系我</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br>
+
+{#主要的内容#}
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+      <div>
+        {% block content %}
+        {% endblock %}
+      </div>
+      <!--右侧的侧边栏-->
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+</div>
+<!--作为换行使用-->
+<br><br><br><br>
+
+{#底部栏#}
+<div id="footer-section">
+  <div class="container">
+    <br>
+    <br><br>
+    <p class="navbar-left">© 2017</p>
+    <p class="navbar-right"><span class="glyphicon glyphicon-user"></span>&nbsp;Jeson Lee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <hr>
+  </div>
+</div>
+
+
+</body>
+</html>

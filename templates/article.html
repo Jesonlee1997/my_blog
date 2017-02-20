@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div style="padding: 2% 8% 5% 8%; border: 1px solid LightGrey;">
+    <div>
+      <h2>{{ current_article.title }}</h2>
+      <br>
+      <div class="article-meta">
+        <ul class="breadcrumb">
+          <li>日期：<a href="javascript:void(0)">{{ current_article.date_time| date:'Y.m.d' }}</a></li>
+          <li>分类：<a href="javascript:void(0)">{{ current_article.category }}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+    <br>
+    <!--文章的内容-->
+    <div class="article-content">
+      {% load djangomarkdown %}
+      <p>{{ current_article.content | django_markdown }}</p>
+
+    </div>
+
+  </div>
+  <script>
+
+          $(".article-content img").addClass("img-responsive center-block");
+
+  </script>
+
+
+{% endblock %}

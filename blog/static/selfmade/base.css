@@ -1,0 +1,88 @@
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Microsoft YaHei, '宋体', Tahoma, Helvetica, "\5b8b\4f53", sans-serif;
+}
+
+p {
+    text-indent: 2em; /*首行缩进*/
+}
+
+/* Note: Try to remove the following lines to see the effect of CSS positioning */
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+
+.article-meta {
+    font-size: 0.8em;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.article-title a {
+    color: #343434;
+}
+
+.article-title a:hover {
+    color: #5899b8;
+}
+
+.article-meta a {
+    color: #6c1e0e;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+hr {
+    background: #dfdfdf; /*改变现代浏览器下线条色*/
+    color: #ddd; /*改变ＩＥ浏览器下线条色，最好和Background-color设置一样的色*/
+    clear: both; /*可以用来清除浮动*/
+    float: none; /*取消浮动，可以不设置*/
+    width: 100%; /*显式定义宽度*/
+    height: 3px; /*改变部分浏览器下的默认高度*/
+    line-height: 1px; /*保证ＩＥ下高度效果一致，不留白色空白区*/
+    font-size: 0; /*设置为0，以确保IE6下不留空白区*/
+    border: none 0; /*取消默认边框，以背景和高度代替边框效果*/
+    margin: 0 0 1.4em;
+}
+
+#footer-section {
+    padding-top: 50px;
+    height: 250px;
+    color: #919191;
+    background-color: #1D1D1D;
+}
+
+#footer-section hr {
+    color: #515151;
+    background-color: #515151;
+}
+
+#mypanel {
+    width: auto;
+    background-color: #1D1D1D;
+    text-align: center;
+    padding: 5% 8% 5% 8%;
+    color: #919191;
+    margin-top: 10%
+}
+
+#mypanel hr {
+    background-color: #4e4e4e;
+}
+
+#head-content {
+    background-image: url(background.jpg);
+    color: #fff;
+    height: 300px;
+    margin-top: 30px
+}
+
+.article-content image {
+    width: 50px;
+}
